@@ -1,17 +1,39 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Moverse : MonoBehaviour
 {
     public float velocidad = 5f;
+    public float fuerzaSalto = 8f;
+    private Rigidbody2D rb;
+    private bool enSuelo;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        if (Keyboard.current == null) return;
-        Vector2 mov = Vector2.zero;
-        if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) mov.y = 1;
-        if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) mov.y = -1;
-        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) mov.x = -1;
-        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) mov.x = 1;
-        transform.Translate(mov * velocidad * Time.deltaTime);
+        float movX = 0f;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) movX = -1f;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) movX = 1f;
+
+        rb.linearVelocity = new Vector2(movX * velocidad, rb.linearVelocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
+        {
+            rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name.Contains("Suelo") || col.gameObject.CompareTag("Suelo"))
+            enSuelo = true;
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        enSuelo = false;
     }
 }
