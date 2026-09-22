@@ -4,7 +4,7 @@ public class MonedaNegativa : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 8f);
     }
 
     void OnTriggerEnter2D(Collider2D other)

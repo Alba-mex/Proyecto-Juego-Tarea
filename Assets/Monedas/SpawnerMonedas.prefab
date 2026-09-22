@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1187171090161811700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7835066113703678671}
+  - component: {fileID: 1065147882889046422}
+  m_Layer: 0
+  m_Name: SpawnerMonedas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7835066113703678671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187171090161811700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.35, y: -4.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065147882889046422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187171090161811700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b41c2cf97a33e1468fa041433cb19a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  monedasPrefabs:
+  - {fileID: 3111715133818156450, guid: 28434a843e5d856419e3014aa22c5e84, type: 3}
+  - {fileID: 5563834169017269727, guid: 2d650645a4134fc45a876d1217413ed0, type: 3}
+  - {fileID: 4507793630526808781, guid: 9f7347eb9498c4d4abf1fe650c34cee0, type: 3}
+  tiempoEntreMonedas: 2
+  minX: -8
+  maxX: 8
+  minY: -3
+  maxY: -3
