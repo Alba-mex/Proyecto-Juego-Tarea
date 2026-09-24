@@ -11,6 +11,10 @@ public class Moneda10 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ModificarPuntos(10);
+            }
             Destroy(gameObject);
         }
     }
